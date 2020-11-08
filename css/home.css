@@ -5,3 +5,8 @@
 .fz05 {
     font-size: 0.1rem;
 }
+.carousel-item img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
