@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{  
+    width: 100px;  
+    height: 100px;  
+    float: left;  
+}  
+
+.wrap{  
+    position: absolute;  
+    width: 100px;  
+    height: 100px;  
+    background: palegoldenrod;
+    overflow: hidden;  
+} 
+.inner{  
+    z-index: 9;  
+    width: 300px;  
+    height: 100px;  
+    background: pink;  
+    /*width: calc(100px * 3);/!*---修改圖片數量的話需要修改下面的動畫引數*!/*/  
+    animation: anim 3s;  
+    animation-iteration-count:1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}  
+@keyframes anim {/*---每圖片切換有兩個階段：位移切換和靜置。中間的效果可以任意定製----*/  
+    0%,20%{ margin-left: 0px;}  
+    25% ,40%{margin-left: -100px;}  
+    45%, 60%{margin-left: -200px;}  
+    /* 65%, 90%{margin-left: -100px;}   */
+    95%, 100%{margin-left: -1000px;}  
+  
+}  
+    </style>
+</head>
+<body>
+    <div class="wrap">
+            <div class="inner"> 
+                <img src="https://picsum.photos/id/1025/600/400" alt="">
+                <img src="https://picsum.photos/id/1024/600/400" alt="">
+                <img src="https://picsum.photos/id/1023/600/400" alt="">
+            </div>  
+        
+       
+    </div>  
+</body>
+</html>
