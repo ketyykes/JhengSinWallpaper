@@ -8,19 +8,22 @@
     <title>Document</title>
     <style> .center {
        text-align: center; 
-    }</style>
+    }
+    .fz02 {
+        font-size: 1rem;
+        white-space:nowrap;
+    }
+    </style>
 </head>
 <body>
-    <button id="randomWallpaper" class="btn btn-primary">按鈕</button>
-    <div id="displayImg" class="text-center">
-        
-         
-            <!-- <a href="#" class="btn btn-primary">點我看全圖</a>
-            <a href="" class="btn btn-primary">下載全圖</a>
-    
-        <img class="d-block"src="img/desktopImg/JhengSinBuilding.jpg" alt=""> -->
+    <div id="header"></div>
+    <main id="content">
+    <div class="d-flex justify-content-center">
+        <button id="randomWallpaper" class="btn btn-primary my-5 p-3 fz02  d-block">點我隨機選個桌布吧</button>
+    </div>
+    <div id="displayImg" >
         <div class="row">
-            <div class="col-md-6 mb-5">
+            <div class="col-md-12 mb-5">
                 <div class="card mb-1">
                     <img src="img/pureImg/bigTree.jpg" class="card-img-top" alt="..." />
                     <div class="card-body">
@@ -37,7 +40,42 @@
         </div>
 
     </div>
-    
+
+     <div id="footer"></div>
+
+
+     <script>
+        let getHeader = document.getElementById("header");
+        let getFooter = document.getElementById("footer");
+        fetch("footer.html")
+            .then(function (response) {
+                if (response.ok) {
+                    console.log("responseFooterOK");
+                    return response.text();
+                }
+                throw new Error("Network response was not ok.");
+            })
+            .then(function (text) {
+                getFooter.innerHTML = text;
+            })
+            .catch(function (error) {
+                console.log("SomethingError ", error.message);
+            });
+        fetch("header.html")
+            .then(function (response) {
+                if (response.ok) {
+                    console.log("responseHeaderOK");
+                    return response.text();
+                }
+                throw new Error("Network response was not ok.");
+            })
+            .then(function (text) {
+                getHeader.innerHTML = text;
+            })
+            .catch(function (error) {
+                console.log("SomethingError ", error.message);
+            });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -48,18 +86,382 @@
     <script>
          let imgTotals = 3;
         let randomNum = Math.floor(Math.random()*imgTotals);
-        console.log(randomNum);
         let getRandomWallpaper = document.getElementById("randomWallpaper");
         let getDisplayImg = document.getElementById("displayImg");
         
         getRandomWallpaper.addEventListener("click",processRandomWallpaper);
         function processRandomWallpaper (){
-            console.log("hello");
-            let imgTotals = 3;
-            let randomNum = Math.floor(Math.random()*imgTotals);
-            let imgUrl = [
-         
+            let imgUrl = [`<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/bigTree.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">大樹</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/pureImg/bigTree.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/bigTree.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/green169.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">綠色彩磚全圖版</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/pureImg/green169.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/green169.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/line.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">生活中的線條美</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/pureImg/line.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/line.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/manyTree.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就樹樹全圖版(Just Tree)</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/pureImg/manyTree.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/manyTree.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/road.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就是路</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/pureImg/road.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/road.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/roadLight.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就是路還有燈</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/pureImg/roadLight.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/roadLight.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuilding.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuilding.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuilding.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓黑底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingCrystal.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓彩磚版</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingCrystal.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingCrystal.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingCrystalBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓彩磚版黑底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingCrystalBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingCrystalBlack.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingPainting.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓油畫版</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingPainting.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingPainting.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓油畫版黑底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingPaintingBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingPaintingBlack.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/fishBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">fish or Windows?</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/fishBlack.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/fishBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/greenDesktop.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">葉子彩磚版</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/greenDesktop.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/greenDesktop.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/manyTreeBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就樹樹黑底(Just Tree)</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/manyTreeBlack.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/manyTreeBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/manyTreeWhite.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就樹樹白底(Just Tree)</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/manyTreeWhite.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/manyTreeWhite.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/overlook.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">頂樓眺望</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/overlook.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/overlook.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/platform.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">曬太陽的地方</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/platform.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/platform.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/squareDoor.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">樹門欸白底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/squareDoor.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/squareDoor.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/squareDoorBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">樹門欸黑底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/squareDoorBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/squareDoorBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/squarePsychological.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/desktopImg/squarePsychological.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/squarePsychological.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12">
+                    <div class="card mb-1">
+                        <img src="img/textImg/rowDesktop.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">橫式文字版</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/textImg/rowDesktop.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/rowDesktop.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12">
+                    <div class="card mb-1">
+                        <img src="img/textImg/rowDesktopBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">橫式文字版黑底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/textImg/rowDesktopBlack.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/rowDesktopBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12">
+                    <div class="card mb-1">
+                        <img src="img/textImg/squareDesktop.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正方文字版</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/textImg/squareDesktop.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/squareDesktop.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`
+                ,
+                `<div class="col-md-12">
+                    <div class="card mb-1">
+                        <img src="img/textImg/squareDeskBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正方文字版黑底</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up
+                                the bulk of the card's content.
+                            </p>
+                            <a href="img/textImg/squareDeskBlack.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/squareDeskBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`
+                
             ];
+            let imgTotals = imgUrl.length;
+            let randomNum = Math.floor(Math.random()*imgTotals);
+            console.log(randomNum);
             getDisplayImg.innerHTML =  ` <div class="row">`+imgUrl[randomNum]+`</div>`;
             
         }
