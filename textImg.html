@@ -14,7 +14,10 @@
 
 <body>
     <div id="header"></div>
-    <main id="content">
+    <script src="js/header.js">
+        // 引用headerNavBar
+    </script>
+    <main id="content"class="bg-light-blue">
         <div class="container mt-5 position-relative">
             <div class="row">
                 <div class="col-md-6">
@@ -77,39 +80,9 @@
         </div>
     </main>
     <div id="footer"></div>
-    <script>
-        let getHeader = document.getElementById("header");
-        let getFooter = document.getElementById("footer");
-        fetch("footer.html")
-            .then(function (response) {
-                if (response.ok) {
-                    console.log("hellowrold");
-                    return response.text();
-                }
-                throw new Error("Network response was not ok.");
-            })
-            .then(function (text) {
-                getFooter.innerHTML = text;
-            })
-            .catch(function (error) {
-                console.log("SomethingError ", error.message);
-            });
-        fetch("header.html")
-            .then(function (response) {
-                if (response.ok) {
-                    console.log("hellowrold");
-                    return response.text();
-                }
-                throw new Error("Network response was not ok.");
-            })
-            .then(function (text) {
-                getHeader.innerHTML = text;
-            })
-            .catch(function (error) {
-                console.log("SomethingError ", error.message);
-            });
+    <script src="js/footer.js">
+        // 引用footer
     </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

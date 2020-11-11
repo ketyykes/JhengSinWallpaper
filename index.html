@@ -13,7 +13,10 @@
 
 <body>
     <div id="header"></div>
-    <main id="content">
+    <script src="js/header.js">
+        // 引用headerNavBar
+    </script>
+    <main id="content" >
         <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -62,32 +65,8 @@
           </div>
     </main>
     <div id="footer"></div>
-    <script>
-        let getHeader = document.getElementById("header");
-        let getFooter =document.getElementById("footer");
-        fetch('footer.html').then(function (response) {
-                    if (response.ok) {
-                        console.log("hellowrold");
-                        return response.text();
-                    }
-                    throw new Error('Network response was not ok.');
-                }).then(function (text) {
-                    getFooter.innerHTML = text;
-                }).catch(function (error) {
-                    console.log('SomethingError ', error.message);
-                });
-        fetch('header.html').then(function (response) {
-            if (response.ok) {
-                console.log("hellowrold");
-                return response.text();
-            }
-            throw new Error('Network response was not ok.');
-        }).then(function (text) {
-            getHeader.innerHTML = text;
-        }).catch(function (error) {
-            console.log('SomethingError ', error.message);
-        });
-    
+    <script src="js/footer.js">
+        // 引用footer
     </script>
 
 
