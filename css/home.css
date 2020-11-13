@@ -1,6 +1,4 @@
-.top10 {
-    top: 10rem;
-}
+
 
 .fz05 {
     font-size: 0.1rem;
@@ -15,4 +13,16 @@
 }
 .carousel-caption p{
     font-size:1rem;
+}
+.fz1rem{
+    font-size:1rem;
+}
+.bg-light-blue{
+    background-color:#d7fff8;
+}
+.bg-main-blue{
+    background-color: #007bff;
+}
+.line-height1rem{
+    line-height:2rem;
 }
