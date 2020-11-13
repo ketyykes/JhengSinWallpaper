@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    <title>正新國小桌布下載</title>
+    <link rel="stylesheet" href="css/home.css">
+    <style> .center {
+       text-align: center; 
+    }
+    .fz02 {
+        font-size: 1rem;
+        white-space:nowrap;
+    }
+    </style>
+</head>
+<body>
+
+    <div id="header"></div>
+    <script src="js/header.js">
+        // 引用headerNavBar
+    </script>
+    <main id="content"class="bg-light-blue">
+    <div class="d-flex justify-content-center">
+        <button id="randomWallpaper" class="btn btn-primary my-5 p-3 fz02  d-block">點我隨機選個桌布吧</button>
+    </div>
+    <div id="displayImg" >
+        <div class="container">
+            <class class="row"></class>
+                <div class="col-md-12 pb-5">
+                    <div class="card mb-1">
+                        <img src="img/random.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">抽卡了</h5>
+                            <p class="card-text">
+                                今天你適合什麼桌布呢？
+                            </p>
+                            <button class="btn btn-primary">點我看全圖</button>
+                            <btuuon class="btn btn-primary">點我下載</btuuon>
+                        </div>
+                    </div>
+                </div>`,
+            </div>
+        </div>
+    </div>
+    </main>
+     <div id="footer"></div>
+     <script src="js/footer.js">
+        // 引用footer
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script>
+         let imgTotals = 3;
+        let randomNum = Math.floor(Math.random()*imgTotals);
+        let getRandomWallpaper = document.getElementById("randomWallpaper");
+        let getDisplayImg = document.getElementById("displayImg");
+        
+        getRandomWallpaper.addEventListener("click",processRandomWallpaper);
+        function processRandomWallpaper (){
+            let imgUrl = [
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuilding.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓</h5>
+                            <p class="card-text">
+                                彼此來自於同個孕育的搖籃，有天你也會與世界對話。
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuilding.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuilding.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓黑底</h5>
+                            <p class="card-text">
+                                彼此來自於同個孕育的搖籃，有天你也會與世界對話。
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingCrystal.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓彩磚版</h5>
+                            <p class="card-text">
+                                這裡孕育著燦爛的結晶。
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingCrystal.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingCrystal.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingCrystalBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓彩磚版黑底</h5>
+                            <p class="card-text">
+                               這裡孕育著燦爛的結晶。
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingCrystalBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingCrystalBlack.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingPainting.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正心樓油畫版</h5>
+                            <p class="card-text">
+                                讀書吧！油畫600年前起源於歐洲，大約15世紀時由荷蘭人發明。
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingPainting.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingPainting.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/JhengSinBuildingBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓油畫版黑底</h5>
+                            <p class="card-text">
+                                讀書吧！油畫600年前起源於歐洲，大約15世紀時由荷蘭人發明。
+                            </p>
+                            <a href="img/desktopImg/JhengSinBuildingPaintingBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/JhengSinBuildingPaintingBlack.jpg" class="btn btn-primary"
+                                download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/fishBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">fish or Windows?</h5>
+                            <p class="card-text">
+                                視魚還視窗？
+                            </p>
+                            <a href="img/desktopImg/fishBlack.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/fishBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/greenDesktop.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">葉子彩磚版</h5>
+                            <p class="card-text">
+                                多看綠色有助於眼睛保健，這不是Minecraft。
+                            </p>
+                            <a href="img/desktopImg/greenDesktop.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/greenDesktop.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/manyTreeBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就樹樹黑底(Just Tree)</h5>
+                            <p class="card-text">
+                                樹樹嗎？對阿就樹樹。
+                            </p>
+                            <a href="img/desktopImg/manyTreeBlack.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/manyTreeBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/manyTreeWhite.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就樹樹白底(Just Tree)</h5>
+                            <p class="card-text">
+                                樹樹嗎？對阿就樹樹。
+                            </p>
+                            <a href="img/desktopImg/manyTreeWhite.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/manyTreeWhite.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/overlook.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">頂樓眺望</h5>
+                            <p class="card-text">
+                                昨夜西風凋碧樹。 獨上高樓，望盡天涯路
+                            </p>
+                            <a href="img/desktopImg/overlook.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/overlook.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/platform.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">補充陽光中的維生素Ｄ</h5>
+                            <p class="card-text">
+                               維生素Ｄ有助於鈣質吸收唷～
+                            </p>
+                            <a href="img/desktopImg/platform.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/platform.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/squareDoor.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">樹門欸白底</h5>
+                            <p class="card-text">
+                                這樹不樹門，對！樹門。
+                            </p>
+                            <a href="img/desktopImg/squareDoor.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/squareDoor.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/squareDoorBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">樹門欸黑底</h5>
+                            <p class="card-text">
+                                這樹不樹門，對！樹門。
+                            </p>
+                            <a href="img/desktopImg/squareDoorBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/squareDoorBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/squarePsychological.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新小築</h5>
+                            <p class="card-text">
+                                你所見的視界來自於心裡
+                            </p>
+                            <a href="img/desktopImg/squarePsychological.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/squarePsychological.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/colorfulFanWhite.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">彩色風扇</h5>
+                            <p class="card-text">
+                                吹出來的風就是這樣多采多姿
+                            </p>
+                            <a href="img/desktopImg/colorfulFanWhite.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/colorfulFanWhite.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/colorfulFanBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">彩色風扇黑底板</h5>
+                            <p class="card-text">
+                                吹出來的風就是這樣多采多姿
+                            </p>
+                            <a href="img/desktopImg/colorfulFanBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/colorfulFanBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/mainBulidingWhite.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓</h5>
+                            <p class="card-text">
+                                這是每天你看黑板，黑板看你的入口
+                            </p>
+                            <a href="img/desktopImg/mainBulidingWhite.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/mainBulidingWhite.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/desktopImg/mainBulidingBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓黑底板</h5>
+                            <p class="card-text">
+                                這是每天你看黑板，黑板看你的入口
+                            </p>
+                            <a href="img/desktopImg/mainBulidingBlack.jpg" target="_blank"
+                                class="btn btn-primary">點我看全圖</a>
+                            <a href="img/desktopImg/mainBulidingBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/bigTree.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">大樹</h5>
+                            <p class="card-text">
+                                前人種樹，後人乘涼。Infrastructure is not only for now.
+                            </p>
+                            <a href="img/pureImg/bigTree.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/bigTree.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/green169.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">綠色彩磚全圖版</h5>
+                            <p class="card-text">
+                                多看綠色有助於眼睛保健，這不是Minecraft。
+                            </p>
+                            <a href="img/pureImg/green169.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/green169.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/line.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">生活中的線條美</h5>
+                            <p class="card-text">
+                                對角線、一種傾斜的線表現顯著的動作。
+                            </p>
+                            <a href="img/pureImg/line.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/line.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/manyTree.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">就樹樹全圖版(Just Tree)</h5>
+                            <p class="card-text">
+                                樹樹嗎？對阿就樹樹。
+                            </p>
+                            <a href="img/pureImg/manyTree.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/manyTree.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/road.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">路、方向</h5>
+                            <p class="card-text">
+                                即便路途艱苦，至少能夠選擇要走的方向。
+                            </p>
+                            <a href="img/pureImg/road.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/road.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/roadLight.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">分歧的道路與燈</h5>
+                            <p class="card-text">
+                                走在石子上的道路，總會遇見一盞燈。
+                            </p>
+                            <a href="img/pureImg/roadLight.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/roadLight.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/pureImg/mainBuliding.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正新樓入口</h5>
+                            <p class="card-text">
+                                這是每天你看黑板，黑板看你的入口
+                            </p>
+                            <a href="img/pureImg/mainBuliding.jpg" target="_blank" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/pureImg/mainBuliding.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/textImg/rowDesktop.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">橫式文字版</h5>
+                            <p class="card-text">
+                                數位書法字體，藉由現代科技表現傳統文字的藝術。
+                            </p>
+                            <a href="img/textImg/rowDesktop.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/rowDesktop.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/textImg/rowDesktopBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">橫式文字版黑底</h5>
+                            <p class="card-text">
+                                數位書法字體，藉由現代科技表現傳統文字的藝術。
+                            </p>
+                            <a href="img/textImg/rowDesktopBlack.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/rowDesktopBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/textImg/squareDesktop.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正方文字版</h5>
+                            <p class="card-text">
+                                正新國小的字排成正方形就是正。
+                            </p>
+                            <a href="img/textImg/squareDesktop.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/squareDesktop.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+                `<div class="col-md-12 mb-5">
+                    <div class="card mb-1">
+                        <img src="img/textImg/squareDeskBlack.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">正方文字版黑底</h5>
+                            <p class="card-text">
+                                正新國小的字排成正方形就是正。
+                            </p>
+                            <a href="img/textImg/squareDeskBlack.jpg" class="btn btn-primary">點我看全圖</a>
+                            <a href="img/textImg/squareDeskBlack.jpg" class="btn btn-primary" download>點我下載</a>
+                        </div>
+                    </div>
+                </div>`,
+            ];
+            let imgTotals = imgUrl.length;
+            let randomNum = Math.floor(Math.random()*imgTotals);
+            console.log(randomNum);
+            getDisplayImg.innerHTML =  ` <div class="container"><div class="row">`+imgUrl[randomNum]+`</div></div>`;
+            
+        }
+    </script>
+</body>
+</html>
